@@ -1,4 +1,4 @@
-package gitHubTest;
+package github;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,12 +9,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class GitHubSolution {
+public class GitHubSolutionTest {
 
         @BeforeAll
         static void beforeAll() {
             Configuration.browserSize = "1920x1080";
-            Configuration.holdBrowserOpen = true;
             Configuration.savePageSource = false;
             Configuration.screenshots = false;
         }
@@ -25,7 +24,7 @@ public class GitHubSolution {
             $("[aria-label='Global']").$(byText("Solutions")).hover();
             $("[href='/enterprise']").click();
             // $$("ul [aria-labelledby='solutions-for-heading']").first().$("a").click();
-            $("h1").shouldHave(text("Build like the best"));
+            $(".h1-mktg").shouldHave(text("Build like the best"));
 
 
 
